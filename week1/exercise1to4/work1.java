@@ -1,4 +1,4 @@
-package exercise1to4;
+package week1.exercise1to4;
 
 import org.junit.Test;
 

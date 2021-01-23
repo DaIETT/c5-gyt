@@ -1,4 +1,4 @@
-package exercise6;
+package week1.exercise6;
 
 /**
  * @author Gyt

@@ -1,4 +1,4 @@
-package additionExer;
+package week1.additionExer;
 
 /**
  * @author Gyt
