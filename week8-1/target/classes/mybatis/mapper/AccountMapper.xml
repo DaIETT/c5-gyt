@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--绑定一个对应的Dao接口-->
+
+
+<mapper namespace="com.gyt.mapper.AccountMapper">
+
+
+    <!--查询语句   就像重写接口   id:方法    resultTpye结果集（括号内为泛型类型）-->
+    <select id="findAll" resultType="com.gyt.pojo.Account">
+        select *
+        from homework.account;
+    </select>
+
+    <select id="selectByPrimaryKey" resultType="com.gyt.pojo.Account">
+        select *
+        from account
+        where id = #{id};
+    </select>
+
+    <insert id="insert" parameterType="com.gyt.pojo.Account">
+        insert into account(id, name, Money, createtime, updatetime)
+        values (#{id}, #{name}, #{Money}, #{createtime}, #{updatetime});
+    </insert>
+
+    <delete id="deleteByPrimaryKey">
+        delete
+        from account
+        where id = #{id};
+    </delete>
+
+    <update id="updateByPrimaryKey" parameterType="com.gyt.pojo.Account">
+        update account
+        set name       = #{name},
+            createtime = #{createtime},
+            Money      = #{Money},
+            updatetime = #{updatetime}
+        where id = #{id};
+    </update>
+
+
+</mapper>
