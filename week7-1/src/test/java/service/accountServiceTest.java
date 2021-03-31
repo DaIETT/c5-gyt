@@ -28,7 +28,7 @@ public class accountServiceTest {
     //转账
     @Test
     public void testTransfer() {
-        accountService.transfer("1", "2", 500);
+        accountService.transfer("2", "1", 1);
 
     }
 }
