@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--绑定一个对应的Dao接口-->
+<mapper namespace="com.gyt.mapper.UserMapper">
+    <!--查询语句   就像重写接口-->
+    <select id="findById" resultType="user">
+        select *
+        from homework.user
+        where id = #{id};
+    </select>
+
+    <update id="register" parameterType="user">
+        insert into user(id, username, mobile, password, name, birthday, sex, email, createtime, updatetime)
+        values (#{id}, #{username}, #{mobile}, #{password}, #{name}, #{birthday}, #{sex}, #{email}, #{createtime},
+                #{updatetime});
+    </update>
+
+    <select id="login" parameterType="user" resultType="user">
+        select *
+        from user
+        where mobile = #{mobile}
+          and password = #{password};
+    </select>
+
+
+</mapper>

@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    username: root
+    password: 789456123gyt
+    #?serverTimezone=UTC解决时区的报错
+    url: jdbc:mysql://localhost:3306/homework?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml        # 单词千万不要写错了
+  #包名下的类就都有了别名，别名就是类名（首字母小写）
+  type-aliases-package: com.gyt.pojo
+
