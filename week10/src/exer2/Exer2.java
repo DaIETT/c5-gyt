@@ -1,4 +1,4 @@
-package exer1;
+package exer2;
 
 import java.util.HashSet;
 import java.util.Scanner;
