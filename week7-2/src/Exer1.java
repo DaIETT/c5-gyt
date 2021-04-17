@@ -45,13 +45,12 @@ public class Exer1 {
         int[] res = new int[ints1.length];
 
         for (int i = 0; i < ints2.length; i++) {
-            //若栈有元素并且小于右边的元素   peek查看一下栈顶
+            //若栈有元素并且小于本次的元素   peek查看一下栈顶
+            //如果本次地数字比栈顶的大 去除 继续下一个判定
             while (!stack.empty() && ints2[i] > stack.peek()) {
                 //存放到map 并且要弹出元素 从而实现单调栈  从大到小
                 map.put(stack.pop(), ints2[i]);
             }
-            
-            
             //刚开始栈是空的 先放入 第一个  
             stack.push(ints2[i]);
         }

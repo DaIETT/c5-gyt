@@ -26,6 +26,7 @@ public class Exer3 {
 
 
     public static String longestWord(String[] words) {
+        //按长度排序
         Arrays.sort(words, (o1, o2) -> {
             if (o1.length() == o2.length())
                 return o1.compareTo(o2);
@@ -34,19 +35,35 @@ public class Exer3 {
             }
         });
 
+        //set无重复
         Set<String> set = new HashSet<>(Arrays.asList(words));
+
+        System.out.println(set);
+
         for (String word : words) {
+
             set.remove(word);
+
+            //如果找到了 "当前最长 word 有所有子串" 就直接返回
             if (find(set, word))
                 return word;
         }
         return "";
     }
 
+    /**
+     *  找到word是否有所有子串
+     * @param set
+     * @param word
+     * @return
+     */
     public static boolean find(Set<String> set, String word) {
         if (word.length() == 0)
             return true;
         for (int i = 0; i < word.length(); i++) {
+
+            //递归的find
+            // 这里的  i 是连续地找
             if (set.contains(word.substring(0, i + 1)) && find(set, word.substring(i + 1)))
                 return true;
         }
